@@ -38,4 +38,7 @@ app.get('/', (req, res) => {
 });
 
 const PORT = process.env.PORT || 3000;
-app.lis
+app.listen(PORT, () => {
+  console.log(`ZVWA API rodando na porta ${PORT}`);
+});
+
