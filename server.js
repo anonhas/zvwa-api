@@ -6,7 +6,7 @@ app.use(cors());
 app.use(express.json());
 
 const ADMIN_USER = 'admin';
-const ADMIN_PASS = 'zero2flag123'; // a senha real
+const ADMIN_PASS = 'zero2flag123'; // a senha real do admin
 
 app.post('/api/login', (req, res) => {
   const { user, pass } = req.body;
@@ -35,3 +35,7 @@ app.post('/api/login', (req, res) => {
 
 app.get('/', (req, res) => {
   res.send('ZVWA API is up!');
+});
+
+const PORT = process.env.PORT || 3000;
+app.lis
