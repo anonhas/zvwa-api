@@ -7,12 +7,12 @@ app.use(express.json());
 
 const USERS = [
   {
-    email: 'ana.elizaur',
+    email: 'administrator',
     password: 'senha123',
     role: 'admin'
   },
   {
-    email: 'usuaria.comum',
+    email: 'ana.elizaur',
     password: 'senha123',
     role: 'user'
   }
