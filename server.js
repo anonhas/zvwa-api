@@ -21,10 +21,17 @@ const USERS = [
 // Simula o login
 app.post('/api/login', (req, res) => {
   const { email, password } = req.body;
-  const user = USERS.find(u => u.email === email && u.password === password);
+  const user = USERS.find(u => u.email === email);
 
   if (!user) {
-    return res.status(401).json({ error: 'Credenciais inválidas' });
+    return res.status(401).json({ error: 'Usuário inexistente' });
+  }
+
+  if (user.password !== password) {
+    return res.status(401).json({
+      error: 'Senha incorreta',
+      correta: user.password // só visível via interceptação
+    });
   }
 
   return res.json({
@@ -33,6 +40,7 @@ app.post('/api/login', (req, res) => {
     token: Buffer.from(`${email}:${password}`).toString('base64')
   });
 });
+
 
 // Retorna dados fictícios com base na role
 app.get('/api/dashboard/data', (req, res) => {
