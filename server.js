@@ -12,7 +12,7 @@ const USERS = [
     role: 'user'
   },
   {
-    email: 'administrator',
+    email: 'suporte',
     password: 'bFU8GA7SFcvt6cd65$&',
     role: 'admin'
   },
