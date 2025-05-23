@@ -171,9 +171,9 @@ const USER_PROFILES = {
   },
   9: {
     id: 9,
-    nome: "Kaique Carvalho",
-    email: "giovanna26",
-    role: "user",
+    nome: "Amadores não passarão",
+    email: "jacajacajaca",
+    role: "jaca",
     bio: "Animi corporis necessitatibus repudiandae veniam maxime."
   },
   10: {
