@@ -76,7 +76,7 @@ app.get('/api/dashboard/secret-data', (req, res) => {
 
   return res.json({
     segredo: 'Este dado só deveria estar acessível para administradores.',
-    chaveInterna: 'ZXhwbG9zZV92dWxuX2hlcmU='
+    chaveInterna: 'Z2F{secret422pwn}'
   });
 });
 
