@@ -101,3 +101,16 @@ app.get('/api/dashboard/secret-data', (req, res) => {
     flag: "Z2F{secret422pwn}"
   });
 });
+app.post('/validar-flags', (req, res) => {
+  const { flags, nome } = req.body;
+
+  const validas = [
+    "Z2F{B8Yg67fc7tad$g8ab5%}",
+    "Z2F{XSS_search_reflected}",
+    "Z2F{422_bypass200}"
+  ];
+
+  const ok = validas.every(flag => flags.includes(flag)) && nome?.trim().length > 3;
+
+  res.json({ ok });
+});
