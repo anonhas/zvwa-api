@@ -7,16 +7,22 @@ app.use(express.json());
 
 const USERS = [
   {
+    email: 'elizaur',
+    password: 'bhy8V#&6yVT6d5rcvt7',
+    role: 'user'
+  },
+  {
     email: 'administrator',
-    password: 'senha123',
+    password: 'bFU8GA7SFcvt6cd65$&',
     role: 'admin'
   },
   {
-    email: 'ana.elizaur',
-    password: 'senha123',
+    email: 'guest',
+    password: 'guest',
     role: 'user'
   }
 ];
+
 
 // Simula o login
 app.post('/api/login', (req, res) => {
