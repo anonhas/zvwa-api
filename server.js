@@ -24,7 +24,6 @@ const USERS = [
 ];
 
 
-// Simula o login
 app.post('/api/login', (req, res) => {
   const { email, password } = req.body;
   const user = USERS.find(u => u.email === email);
@@ -36,7 +35,7 @@ app.post('/api/login', (req, res) => {
   if (user.password !== password) {
     return res.status(401).json({
       error: 'Senha incorreta',
-      correta: user.password // só visível via interceptação
+      correta: user.password 
     });
   }
 
@@ -48,7 +47,6 @@ app.post('/api/login', (req, res) => {
 });
 
 
-// Retorna dados fictícios com base na role
 app.get('/api/dashboard/data', (req, res) => {
   const role = req.headers['x-role'];
 
@@ -67,7 +65,6 @@ app.get('/api/dashboard/data', (req, res) => {
   });
 });
 
-// Endpoint com falha: retorna 422 se não for admin, mas dá pra manipular
 app.get('/api/dashboard/secret-data', (req, res) => {
   const role = req.headers['x-role'];
   if (role !== 'admin') {
@@ -89,7 +86,6 @@ app.listen(PORT, () => {
   console.log(`ZVWA API rodando na porta ${PORT}`);
 });
 
-// Endpoint de dados secretos com falha de status manipulável
 app.get('/api/dashboard/secret-data', (req, res) => {
   const role = req.headers['x-role'];
   if (role !== 'admin') {
