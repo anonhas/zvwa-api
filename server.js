@@ -88,3 +88,16 @@ const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => {
   console.log(`ZVWA API rodando na porta ${PORT}`);
 });
+
+// Endpoint de dados secretos com falha de status manipulável
+app.get('/api/dashboard/secret-data', (req, res) => {
+  const role = req.headers['x-role'];
+  if (role !== 'admin') {
+    return res.status(422).json({ error: "Acesso não autorizado" });
+  }
+
+  res.status(200).json({
+    segredo: "Dados confidenciais expostos.",
+    flag: "Z2F{secret422pwn}"
+  });
+});
