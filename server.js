@@ -104,7 +104,8 @@ app.post('/validar-flags', (req, res) => {
     "Z2F{B8Yg67fc7tad$g8ab5%}",
     "Z2F{XSS_search_reflected}",
     "Z2F{422_bypass200}",
-    "Z2F{IDOR_exposed133}"
+    "Z2F{IDOR_exposed133}",
+    "Z2F{exposed_swagger_doc}"
   ];
 
   const ok = validas.every(flag => flags.includes(flag)) && nome?.trim().length > 3;
