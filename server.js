@@ -165,7 +165,7 @@ const USER_PROFILES = {
   8: {
     id: 8,
     nome: "Daniela Barros",
-    email: "ysantos",
+    email: "cajucajucacaju",
     role: "user",
     bio: "Occaecati ipsa tempora beatae rem tenetur laboriosam inventore."
   },
